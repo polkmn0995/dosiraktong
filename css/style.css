@@ -407,6 +407,9 @@ body {
   grid-auto-rows: minmax(100px, auto);
   gap: 20px;
 }
+.service-box-title{
+  padding-bottom: 10px;
+}
 .service-box-1 {
   position: relative;
   display: block;
