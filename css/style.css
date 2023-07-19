@@ -37,6 +37,116 @@ body {
   max-width: 1420px;
   margin: 0 auto;
 }
+/* 안내창 */
+body.active {
+  overflow-y: auto;
+}
+.modal-wrap {
+  font-family: "Noto Sans KR", Helvetica, "맑은 고딕", "malgun gothic",
+    "Apple SD Gothic Neo", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.fadeOut {
+  animation: fadeOut 0.3s forwards;
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
+}
+.modal-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.modal-logo img {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid #fcfcfc;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+}
+.modal-nonotic {
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 90px;
+}
+.modal-nonotic strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(235, 23, 23);
+  background: linear-gradient(to top, yellow 60%, transparent 40%);
+}
+.modal-nonotic span {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+.modal-close {
+  color: #000;
+  text-align: center;
+  margin-top: 65px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-close i {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 위로가기 gotop */
+.gotop {
+  position: fixed;
+  display: flex;
+  right: 30px;
+  bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #3056a1;
+  color: #fff;
+  font-size: 28px;
+  z-index: 999;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: bottom 0.3s, visibility 0.3s, opacity 0.3s;
+}
+.gotop.active {
+  bottom: 30px;
+  visibility: visible;
+  opacity: 1;
+}
+.gotop.active-footer {
+  bottom: 120px;
+}
 /* 레이아웃 */
 .wrap {
   position: relative;
@@ -407,7 +517,7 @@ body {
   grid-auto-rows: minmax(100px, auto);
   gap: 20px;
 }
-.service-box-title{
+.service-box-title {
   padding-bottom: 10px;
 }
 .service-box-1 {
@@ -573,6 +683,7 @@ body {
   display: block;
   height: 75vh;
   padding: 130px 0 0 0;
+  margin-top: 40px;
 }
 .about .inner {
   height: 100%;
@@ -585,6 +696,7 @@ body {
 .about-title {
   font-size: 44px;
   line-height: 1.35;
+  min-height: 490px;
 }
 .about-title span {
   color: #3a68b2;
@@ -828,11 +940,17 @@ body {
   height: 10px;
   background-color: #666;
 }
+.footer-br {
+  display: none;
+}
 @media screen and (max-width: 640px) {
   .footer-list span {
     display: block;
   }
   .footer-bar {
     display: none;
+  }
+  .footer-br {
+    display: block;
   }
 }
