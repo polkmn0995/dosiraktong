@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dosiraktong-uxru.vercel.app/robots.txt
+
+# Sitemaps
+Sitemap: https://dosiraktong-uxru.vercel.app/robots.txt/sitemap.xml
